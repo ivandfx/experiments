@@ -14,7 +14,7 @@
 	<script type="text/javascript">
 		let currentVolume = 0;
 		let clickCount = 0;
-		let remainingTime = 5;
+		let remainingTime = 10;
 		
 		let clickPadE1 = document.getElementById("clickPad");
 		let clickCountE1 = document.getElementById("clickCount");
@@ -36,7 +36,7 @@
 					currentVolumeE1.innerHTML = currentVolume;
 					clickCountE1.innerHTML = clickCount;
 				}
-				remainingTime = 5;
+				remainingTime = 10;
 			} else {
 				remainingTime -= 1;
 			}
