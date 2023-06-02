@@ -1,0 +1,47 @@
+<html>
+<head>
+</head>
+<body>
+	<h2>SpeedClick</h2>
+	<h4>Created by ivandfx</h4>
+	<p>Highest: <span id="currentVolume">0</span></p>
+	<p>Time remaining: <span id="remainingTime">5</span> seconds</p>
+	<p>Clicks: <span id="clickCount">0</span></p>
+	
+	<div style="width: 800px; height: 600px; border: solid 1px red;" id="clickPad">
+	</div>
+	<script type="text/javascript">
+		let currentVolume = 0;
+		let clickCount = 0;
+		let remainingTime = 5;
+		
+		let clickPadE1 = document.getElementById("clickPad");
+		let clickCountE1 = document.getElementById("clickCount");
+		let remainingTimeE1 = document.getElementById("remainingTime");
+		let currentVolumeE1 = document.getElementById("currentVolume");
+		
+		clickPadE1.addEventListener("click", function() {
+			console.log("Has hecho click");
+			clickCount += 1;
+			clickCountE1.innerHTML = clickCount;
+		});
+		
+		setInterval(function(){
+			if (remainingTime == 0) {
+				if (clickCount > 0) {
+					currentVolume = clickCount;
+					clickCount = 0;
+					
+					currentVolumeE1.innerHTML = currentVolume;
+					clickCountE1.innerHTML = clickCount;
+				}
+				remainingTime = 5;
+			} else {
+				remainingTime -= 1;
+			}
+			remainingTimeE1.innerHTML = remainingTime;
+			
+		}, 1000);
+	</script>
+</body>
+</html>
